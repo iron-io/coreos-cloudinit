@@ -32,7 +32,6 @@ var Rules []rule = []rule{
 	checkEncoding,
 	checkStructure,
 	checkValidity,
-	checkWriteFiles,
 	checkWriteFilesUnderCoreos,
 }
 
