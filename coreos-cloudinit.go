@@ -27,7 +27,6 @@ import (
 	"time"
 
 	"github.com/coreos/coreos-cloudinit/config"
-	"github.com/coreos/coreos-cloudinit/config/validate"
 	"github.com/coreos/coreos-cloudinit/datasource"
 	"github.com/coreos/coreos-cloudinit/datasource/configdrive"
 	"github.com/coreos/coreos-cloudinit/datasource/file"
@@ -44,6 +43,7 @@ import (
 	"github.com/coreos/coreos-cloudinit/network"
 	"github.com/coreos/coreos-cloudinit/pkg"
 	"github.com/coreos/coreos-cloudinit/system"
+	"github.com/iron-io/coreos-cloudinit/config/validate"
 )
 
 const (
