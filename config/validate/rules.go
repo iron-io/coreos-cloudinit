@@ -149,24 +149,6 @@ func checkNodeValidity(n, g node, r *Report) {
 	}
 }
 
-// checkWriteFiles checks to make sure that the target file can actually be
-// written. Note that this check is approximate (it only checks to see if the file
-// is under /usr).
-func checkWriteFiles(cfg node, report *Report) {
-	for _, f := range cfg.Child("write_files").children {
-		c := f.Child("path")
-		if !c.IsValid() {
-			continue
-		}
-
-		// d := path.Dir(c.String())
-		// switch {
-		// case strings.HasPrefix(d, "/usr"):
-		// 	report.Error(c.line, "file cannot be written to a read-only filesystem")
-		// }
-	}
-}
-
 // checkWriteFilesUnderCoreos checks to see if the 'write_files' node is a
 // child of 'coreos' (it shouldn't be).
 func checkWriteFilesUnderCoreos(cfg node, report *Report) {
