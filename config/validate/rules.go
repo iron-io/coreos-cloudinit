@@ -17,9 +17,7 @@ package validate
 import (
 	"fmt"
 	"net/url"
-	"path"
 	"reflect"
-	"strings"
 
 	"github.com/coreos/coreos-cloudinit/config"
 )
@@ -161,11 +159,11 @@ func checkWriteFiles(cfg node, report *Report) {
 			continue
 		}
 
-		d := path.Dir(c.String())
-		switch {
-		case strings.HasPrefix(d, "/usr"):
-			report.Error(c.line, "file cannot be written to a read-only filesystem")
-		}
+		// d := path.Dir(c.String())
+		// switch {
+		// case strings.HasPrefix(d, "/usr"):
+		// 	report.Error(c.line, "file cannot be written to a read-only filesystem")
+		// }
 	}
 }
 
